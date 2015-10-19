@@ -1,4 +1,4 @@
-public class Patient {
+  public class Patient {
 	private String name;
 	private int age;
 	private String illness;
@@ -34,6 +34,7 @@ public class Patient {
 	    }
 	
 	}
+		
 	public void printThisPatientAndRecur(){
 		System.out.println("This patient's name is " + this.name + ". There age is " + this.age +". There illness is " + this.illness + "."); 
         if (nextPatient == null)
@@ -44,4 +45,10 @@ public class Patient {
 		//could we do with toString? what is first patient ==null? ie no patients
 		// it looks wrong in hospital manager, as it looks like only 1 patient is printed 
 
+	public String getName(){
+		return name;
+	}
+	public Patient getNextPatient(){
+		return nextPatient;
+	}
 } 
