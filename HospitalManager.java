@@ -22,28 +22,26 @@ public class HospitalManager{
 		Patient fourthPatient = new Patient("Catherine", 32, "flu");
 		patientListStart.addPatient(fourthPatient);
 	
-		//	Patient fifthPatient = new Patient("Pedro", 34, "confused about Java (but enjoying it)");
-		//	patientListStart.addPatient(fifthPatient);
+	
 	
 		patientListStart.addPatient(new Patient("Pedro", 34, "confused about Java (but enjoying it)"));
-		//need to test - how would I delete Pedro if it is done like this?
-		System.out.println("" + patientListStart.getLength());
-		firstPatient.printThisPatientAndRecur();                  
-		//how do we have indices with lists. do we keep a separate int instance variable and keep passing it as a constructor arg for patient?
-		//Q) wouldn't it be better to have a method printPatientList from within the hm object, which calls the recurring print method in patient??
+		
+		patientListStart.printThisPatientAndRecur();                  
+		
 		deletePatientIncludingFirst(thirdPatient); 
-		//had hm.delete.... but it couldn't find it. Then I took hm. away and it worked. why?
-		
-		firstPatient.printThisPatientAndRecur();
-		System.out.println("" + patientListStart.getLength());
 		
 		
-		deletePatientIncludingFirst(patientListStart);
-		firstPatient.printThisPatientAndRecur();
+		patientListStart.printThisPatientAndRecur();
+		
+		
+		deletePatientIncludingFirst(firstPatient);
+		patientListStart.printThisPatientAndRecur();
 	}
 	private boolean deletePatientIncludingFirst(Patient patientToDelete){
-		if (patientListStart.getName().equals(patientToDelete.getName())){  //q) why cant it see patientToDelete.name?
-			patientListStart = patientListStart.getNextPatient(); //this doesn't seem to be deleting patientListStart!
+		if (patientListStart.getName().equals(patientToDelete.getName())){ 
+		            //the above line definitely works
+			patientListStart = patientListStart.getNextPatient();
+ 			        //this doesn't seem to be deleting patientListStart!
 			return true;
 		}
 		else{

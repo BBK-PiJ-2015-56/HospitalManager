@@ -19,7 +19,7 @@
 		}
 	}
 	
-	public boolean deletePatient(Patient patientToDelete){     //why cant we have if something for this patient??
+	public boolean deletePatient(Patient patientToDelete){     
 		if (this.nextPatient == null)
 			return false;
 		else{
@@ -42,8 +42,7 @@
 		else
 		    nextPatient.printThisPatientAndRecur();		                               
 	}
-		//could we do with toString? what is first patient ==null? ie no patients
-		// it looks wrong in hospital manager, as it looks like only 1 patient is printed 
+		
 
 	public String getName(){
 		return name;
@@ -51,12 +50,5 @@
 	public Patient getNextPatient(){
 		return nextPatient;
 	}
-	public int getLength(){        //again the same issue arises of how to do it if 0 patients. another method in hm?
-		int patientCount = 1;
-		while(nextPatient !=null){
-			patientCount++;
-			return nextPatient.getlength();
-		}
-		
-	}
+	
 } 
